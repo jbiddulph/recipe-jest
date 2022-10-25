@@ -14,6 +14,10 @@ npm install
 npm run serve
 ```
 
+```
+NAVIGATE TO http://localhost:8080/recipes
+```
+
 ### start json-server
 ```
 json-server --watch src/data/recipe.json
