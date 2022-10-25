@@ -18,7 +18,7 @@
       <i :class="[open ? 'fa-solid fa-times' : 'fa-solid fa-bars']"></i>
     </span>
     <ul
-      class="bg-jet-orange md:flex items-center cursor-pointer md:px-0 px-10 md:pb-0 pb-10 md:static absolute md:w-auto w-full top-14 duration-700 ease-in"
+      class="bg-jet-orange md:flex items-center cursor-pointer z-10 md:px-0 px-10 md:pb-0 pb-10 md:static absolute md:w-auto w-full top-14 duration-700 ease-in"
       :class="[open ? 'left-0' : 'hidden']"
     >
       <li class="my-8 md:my-0 md:mx-2">
