@@ -1,9 +1,9 @@
 <template>
-  <footer class="bg-jet-light-gray text-jet-dark-gray text-opacity-50 bottom">
+  <footer class="text-jet-dark-gray text-opacity-50 bottom">
     <div
       class="container border-t border-jet-dark-gray border-opacity-50 mx-auto flex flex-col md:flex-row justify-between py-8"
     >
-      <div class="px-4 md:px-0">
+      <div class="px-4 md:px-0 text-center md:text-left mb-8 md:mb-0">
         Copyright &copy; 2022 Just Eat Takeaway.com. All rights reserved.
       </div>
       <div>
