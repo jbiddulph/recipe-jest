@@ -23,41 +23,64 @@
         >
       </div>
       <div class="md:w-1/2 w-3/4">
-        <form class="flex flex-col">
+        <Form class="flex flex-col" @submit="onSubmit()">
           <div class="flex flex-col">
             <label for="Name">First Name</label>
-            <input
+            <Field
+              name="first_name"
               type="text"
+              v-model="first_name"
               class="border border-jet-dark-gray rounded p-4 mb-4"
+              :rules="isRequired"
+            />
+            <ErrorMessage
+              class="text-red-700 font-bold mb-4"
+              name="first_name"
             />
           </div>
           <div class="flex flex-col">
             <label for="Name">Last Name</label>
-            <input
+            <Field
+              name="last_name"
               type="text"
+              v-model="last_name"
               class="border border-jet-dark-gray rounded p-4 mb-4"
+              :rules="isRequired"
+            />
+            <ErrorMessage
+              class="text-red-700 font-bold mb-4"
+              name="last_name"
             />
           </div>
           <div class="flex flex-col">
             <label for="Name">Email</label>
-            <input
+            <Field
+              name="email"
               type="email"
+              v-model="email"
               class="border border-jet-dark-gray rounded p-4 mb-4"
+              :rules="validateEmail"
             />
+            <ErrorMessage class="text-red-700 font-bold mb-4" name="email" />
           </div>
           <div class="flex flex-col">
             <label for="Name">Comment</label>
-            <input
+            <Field
+              name="comment"
               type="text"
+              v-model="comment"
               class="border border-jet-dark-gray rounded p-4 mb-4"
+              :rules="isRequired"
             />
+            <ErrorMessage class="text-red-700 font-bold mb-4" name="comment" />
           </div>
           <div class="flex flex-col">
             <AppButton type="primary" class="my-4 mx-10 w-60"
               >Contact</AppButton
             >
+            form Data: {{ contactForm }}
           </div>
-        </form>
+        </Form>
       </div>
     </div>
   </div>
@@ -65,8 +88,59 @@
 
 <script>
 import AppButton from "@/components/AppButton.vue";
+import { Form, Field, ErrorMessage } from "vee-validate";
 export default {
-  components: { AppButton },
+  components: {
+    AppButton,
+    Form,
+    Field,
+    ErrorMessage,
+  },
   name: "ContactView",
+  data() {
+    return {
+      contactForm: {
+        first_name: "",
+        last_name: "",
+        email: "",
+        comment: "",
+      },
+    };
+  },
+  methods: {
+    isRequired(value) {
+      if (value && value.trim()) {
+        return true;
+      }
+      return "This field is required";
+    },
+    clearFields() {
+      this.first_name = "";
+      this.last_name = "";
+      this.email = "";
+      this.comment = "";
+    },
+    validateEmail(value) {
+      // if the field is empty
+      if (!value) {
+        return "This field is required";
+      }
+      // if the field is not a valid email
+      const regex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;
+      if (!regex.test(value)) {
+        return "This field must be a valid email";
+      }
+      // All is good
+      return true;
+    },
+    onSubmit() {
+      this.contactForm = {
+        first_name: this.first_name,
+        last_name: this.last_name,
+        email: this.email,
+        comment: this.comment,
+      };
+    },
+  },
 };
 </script>
