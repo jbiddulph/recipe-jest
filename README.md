@@ -10,6 +10,11 @@ npm install
 npm run serve
 ```
 
+### start json-serevr
+```
+json-server --watch src/data/recipe.json
+```
+
 ### Compiles and minifies for production
 ```
 npm run build
