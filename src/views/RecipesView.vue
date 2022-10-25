@@ -1,5 +1,5 @@
 <template>
-  <div class="home max-h-screen container mx-auto my-12">
+  <div class="home container mx-auto my-12">
     <h1 class="text-4xl mx-8 my-8 text-center md:text-left">Recipes</h1>
     <ul class="flex flex-col md:flex-row items-center md:items-start mx-4">
       <li
