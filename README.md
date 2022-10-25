@@ -10,7 +10,7 @@ npm install
 npm run serve
 ```
 
-### start json-serevr
+### start json-server
 ```
 json-server --watch src/data/recipe.json
 ```
