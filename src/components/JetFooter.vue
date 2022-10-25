@@ -1,25 +1,25 @@
 <template>
-  <footer
-    class="bg-jet-light-gray text-jet-dark-text text-opacity-50 bottom relative"
-  >
+  <footer class="bg-jet-light-gray text-jet-dark-gray text-opacity-50 bottom">
     <div
-      class="container border-t border-jet-dark-text border-opacity-50 mx-auto flex flex-col md:flex-row justify-between py-8"
+      class="container border-t border-jet-dark-gray border-opacity-50 mx-auto flex flex-col md:flex-row justify-between py-8"
     >
-      <div>
+      <div class="px-4 md:px-0">
         Copyright &copy; 2022 Just Eat Takeaway.com. All rights reserved.
       </div>
       <div>
-        <ul class="flex md:flex-row">
-          <li>
+        <ul class="flex flex-col md:flex-row text-center">
+          <li class="md:ml-6">
             <a
               href="https://www.justeattakeaway.com/cookie-statement"
+              target="_blank"
               title="Cookie Statement"
               >Cookie Statement</a
             >
           </li>
-          <li>
+          <li class="md:ml-6">
             <a
               href="https://www.justeattakeaway.com/privacy-statement"
+              target="_blank"
               title="Privacy Statement"
               >Privacy Statement</a
             >

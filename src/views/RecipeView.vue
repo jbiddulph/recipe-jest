@@ -1,19 +1,24 @@
 <template>
   <JetHeader />
   <div class="home max-h-screen container mx-auto my-12">
-    <h1 class="text-4xl">Recipes</h1>
-    <ul class="flex flex-row">
+    <h1 class="text-4xl mx-4 my-8 text-center md:text-left">Recipes</h1>
+    <ul class="flex flex-col md:flex-row items-center md:items-start mx-4">
       <li
-        class="w-1/2 flex flex-col"
+        class="w-11/12 md:w-1/2 flex flex-col bg-jet-light-gray p-4 rounded-2xl md:mx-4 mx-2 mb-4"
         v-for="recipe in recipes"
         :key="recipe.id"
       >
-        <img :src="recipe.image" width="400" height="400" />
-        <div class="flex flex-row justify-between">
-          <h2>{{ recipe.name }}</h2>
-          <span>by: {{ recipe.cook_name }}</span>
+        <div class="flex flex-col md:flex-row">
+          <img
+            :src="recipe.image"
+            class="rounded-2xl md:mr-4 align-middle w-full md:w-1/4"
+          />
+          <div>
+            <h2 class="text-2xl">{{ recipe.name }}</h2>
+            <span>by: {{ recipe.cook_name }}</span>
+          </div>
         </div>
-        <div>{{ recipe.description }}</div>
+        <div class="mt-4">{{ recipe.description }}</div>
         <div>{{ recipe.method }}</div>
         <div>{{ recipe.prep_time }}</div>
         <div>{{ recipe.cook_time }}</div>

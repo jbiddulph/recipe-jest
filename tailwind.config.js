@@ -5,7 +5,7 @@ module.exports = {
     extend: {
       colors: {
         "jet-orange": "#ff8000",
-        "jet-dark-text": "#242e30",
+        "jet-dark-gray": "#242e30",
         "jet-light-gray": "#fafafa"
       },
     },
