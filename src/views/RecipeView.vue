@@ -1,9 +1,7 @@
 <template>
   <div class="home container mx-auto my-12">
     <h1 class="text-4xl mx-8 my-8 text-center md:text-left">
-      <router-link :to="'/recipes'" class="text-jet-orange"
-        >Recipes</router-link
-      >
+      <router-link :to="'/'" class="text-jet-orange">Recipes</router-link>
       > {{ recipe.name }}
     </h1>
     <div class="flex flex-col md:flex-row items-center md:items-start mx-4">
@@ -51,13 +49,16 @@ export default {
   },
   methods: {
     async getAllRecipes() {
-      let response = await axios.get(
-        `http://localhost:3000/meals/${this.$route.params.id}`
-      );
-      console.log("Res: ", response);
-      this.recipe = response.data;
-      this.nutritional_info = response.data.nutritional_info;
-      this.ingredients = response.data.ingredients;
+      try {
+        let response = await axios.get(
+          `http://localhost:3000/meals/${this.$route.params.id}`
+        );
+        this.recipe = response.data;
+        this.nutritional_info = response.data.nutritional_info;
+        this.ingredients = response.data.ingredients;
+      } catch (error) {
+        console.log(error);
+      }
     },
   },
   mounted() {

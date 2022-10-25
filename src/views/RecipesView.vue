@@ -50,8 +50,12 @@ export default {
   },
   methods: {
     async getAllRecipes() {
-      let response = await axios.get("http://localhost:3000/meals");
-      this.recipes = response.data;
+      try {
+        let response = await axios.get("http://localhost:3000/meals");
+        this.recipes = response.data;
+      } catch (error) {
+        console.log(error);
+      }
     },
   },
   mounted() {

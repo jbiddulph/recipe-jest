@@ -3,7 +3,7 @@
     class="bg-jet-orange text-gray-100 py-4 px-6 shadow md:flex justify-between items-center"
   >
     <div class="flex items-center">
-      <router-link to="/recipes" class="p-2">
+      <router-link to="/" class="p-2">
         <img
           src="https://s3.eu-central-1.amazonaws.com/takeaway-corporatewebsite-dev/logo_white.svg"
           height="24"
@@ -24,7 +24,7 @@
       <li class="my-8 md:my-0 md:mx-2">
         <router-link
           class="text-white hover:border-b-2 border-white font-bold p-2"
-          to="/recipes"
+          to="/"
           >Recipe List</router-link
         >
       </li>

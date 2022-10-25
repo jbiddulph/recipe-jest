@@ -5,7 +5,7 @@ import ContactView from "@/views/ContactView.vue";
 
 const routes = [
   {
-    path: "/recipes",
+    path: "/",
     name: "recipes",
     component: RecipesView,
   },
