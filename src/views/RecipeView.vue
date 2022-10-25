@@ -8,6 +8,7 @@
         v-for="recipe in recipes"
         :key="recipe.id"
       >
+        <img :src="recipe.image" width="400" height="400" />
         <div class="flex flex-row justify-between">
           <h2>{{ recipe.name }}</h2>
           <span>by: {{ recipe.cook_name }}</span>
