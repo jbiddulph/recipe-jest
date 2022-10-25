@@ -1,7 +1,9 @@
 <template>
-  <footer class="bg-jet-light-gray opacity-50 bottom relative">
+  <footer
+    class="bg-jet-light-gray text-jet-dark-text text-opacity-50 bottom relative"
+  >
     <div
-      class="container border-t mx-auto flex flex-col md:flex-row justify-between"
+      class="container border-t border-jet-dark-text border-opacity-50 mx-auto flex flex-col md:flex-row justify-between py-8"
     >
       <div>
         Copyright &copy; 2022 Just Eat Takeaway.com. All rights reserved.

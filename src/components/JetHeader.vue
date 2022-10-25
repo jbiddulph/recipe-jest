@@ -25,14 +25,14 @@
         <router-link
           class="text-white hover:border-b-2 border-white font-bold p-2"
           to="/recipes"
-          >Recipes</router-link
+          >Recipe List</router-link
         >
       </li>
       <li class="my-8 md:my-0 md:mx-2">
         <router-link
           class="text-white hover:border-b-2 border-white font-bold p-2"
           to="/contact"
-          >Contact</router-link
+          >Contact us</router-link
         >
       </li>
     </ul>
