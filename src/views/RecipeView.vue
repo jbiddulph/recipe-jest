@@ -1,5 +1,6 @@
 <template>
-  <div class="home container mx-auto my-12">
+  <div :class="{ 'is-loading': isLoading }">&nbsp;</div>
+  <div v-if="!isLoading" class="home container mx-auto my-12">
     <h1 class="text-4xl mx-8 my-8 text-center md:text-left">
       <router-link :to="'/'" class="text-jet-orange">Recipes</router-link>
       > {{ recipe.name }}
@@ -42,6 +43,7 @@ export default {
   name: "RecipesView",
   data() {
     return {
+      isLoading: false,
       recipe: {},
       nutritional_info: {},
       ingredients: [],
@@ -50,9 +52,11 @@ export default {
   methods: {
     async getAllRecipes() {
       try {
+        this.isLoading = true;
         let response = await axios.get(
           `http://localhost:3000/meals/${this.$route.params.id}`
         );
+        this.isLoading = false;
         this.recipe = response.data;
         this.nutritional_info = response.data.nutritional_info;
         this.ingredients = response.data.ingredients;
