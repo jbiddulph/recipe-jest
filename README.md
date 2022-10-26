@@ -19,10 +19,6 @@ json-server --watch src/data/recipe.json
 npm run serve
 ```
 
-```
-NAVIGATE TO http://localhost:8080/recipes
-```
-
 ### Compiles and minifies for production
 ```
 npm run build
